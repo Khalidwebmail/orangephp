@@ -1,0 +1,6 @@
+/.idea
+/.history
+/vendor
+/node_modules
+public/images
+.env
