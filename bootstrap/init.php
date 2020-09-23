@@ -7,6 +7,7 @@ if(!isset($_SESSION))
  * Load env file
  */
 require_once __DIR__."/../app/Config/env.php";
-
-$app_name = getenv('APP_NAME');
-var_dump($app_name);
+/**
+ * Router file
+ */
+require_once __DIR__."/../app/Routing/routes.php";
