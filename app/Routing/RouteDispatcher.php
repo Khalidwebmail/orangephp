@@ -17,7 +17,7 @@ class RouteDispatcher
         $this->explodeRoute();
     }
 
-    private function explodeRoute()
+    public function explodeRoute()
     {
         if($this->match)
         {
@@ -27,8 +27,8 @@ class RouteDispatcher
 
             if(is_callable([new $this->controller, $this->method]))
             {
-                call_user_func_array([ $this->controller, $this->method],
-                    [$this->match['params']]);
+                call_user_func_array(array(new $this->controller, $this->method),
+                    array($this->match['params']));
             }
             else{
                 echo "The method {$this->method} is not defined in {$this->controller}";
