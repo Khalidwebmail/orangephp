@@ -7,6 +7,12 @@ if(!isset($_SESSION))
  * Load env file
  */
 require_once __DIR__."/../app/Config/env.php";
+
+/**
+ * Database object
+ */
+new \App\Classes\Database();
+
 /**
  * Router file
  */
