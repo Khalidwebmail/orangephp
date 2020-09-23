@@ -2,14 +2,18 @@
 
 $router = new AltoRouter();
 
-$router->map('GET', '/', '', 'index');
+$router->map('GET', '/', '', 'home');
 $router->map('GET', '/about', '', 'about_us');
 
 $match = $router->match();
 
 if($match)
 {
-    var_dump($router->match());
+    require_once __DIR__."/../Controllers/Controller.php";
+    require_once __DIR__."/../Controllers/IndexController.php";
+
+    $index = new \App\Controllers\IndexController();
+    $index->show();
 }
 
 else{
