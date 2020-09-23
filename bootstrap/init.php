@@ -11,3 +11,4 @@ require_once __DIR__."/../app/Config/env.php";
  * Router file
  */
 require_once __DIR__."/../app/Routing/routes.php";
+new \App\Routing\RouteDispatcher($router);

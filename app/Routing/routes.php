@@ -2,7 +2,7 @@
 
 $router = new AltoRouter();
 
-$router->map('GET', '/', '', 'index');
+$router->map('GET', '/show', 'App\Controller\IndexController@show', 'show');
 $router->map('GET', '/about', '', 'about_us');
 
 $match = $router->match();
