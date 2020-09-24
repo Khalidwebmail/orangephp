@@ -14,6 +14,10 @@ require_once __DIR__."/../app/Config/env.php";
 new \App\Classes\Database();
 
 /**
+ * PHP mailer object
+ */
+new \App\Classes\Mail();
+/**
  * Router file
  */
 require_once __DIR__."/../app/Routing/routes.php";
