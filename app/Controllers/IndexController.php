@@ -5,6 +5,7 @@ namespace App\Controllers;
 
 
 use App\Classes\Mail;
+use App\Classes\Session;
 
 class IndexController extends Controller
 {
@@ -25,5 +26,15 @@ class IndexController extends Controller
         else{
             echo "Mailer Error: " . $mail->ErrorInfo;
         }
+    }
+
+    public function info()
+    {
+        Session::add('admin', 'I m admin');
+        if(Session::has('admin')){
+            $msg = Session::get('admin');
+        }
+
+        return view('dashboard', ['admin'=>$msg]);
     }
 }
