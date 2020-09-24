@@ -27,7 +27,7 @@ class RouteDispatcher
 
             if(is_callable([new $this->controller, $this->method]))
             {
-                call_user_func_array(array(new $this->controller, $this->method),
+                call_user_func_array([new $this->controller, $this->method],
                     array($this->match['params']));
             }
             else{
