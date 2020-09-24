@@ -22,4 +22,10 @@ function make($filename, $data)
     ob_end_clean();
 
     return $content;
+
+    $view = __DIR__."/../../resources/views";
+    $cache = __DIR__."/../../bootstrap/cache";
+
+    $blade = new Blade($view, $cache);
+    print $blade->view()->make($path, $data)->render();
 }
