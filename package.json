@@ -1,0 +1,8 @@
+{
+  "author": "Khalid Ahmed",
+  "description": "Orange PHP an open source framework",
+  "private": true,
+  "name": "orangephp",
+  "version": "1.0.0",
+  "dependencies": {}
+}
