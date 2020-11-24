@@ -3,4 +3,4 @@
 $router = new AltoRouter();
 
 
-$router->map('GET', '/', 'App\Controllers\HomeController@index', 'index');
+$router->map('GET', '/', 'App\Controllers\WelcomeController@index', 'index');

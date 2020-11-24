@@ -3,7 +3,7 @@
 
 namespace App\Controllers;
 
-class HomeController extends Controller
+class WelcomeController extends Controller
 {
     public function index()
     {

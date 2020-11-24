@@ -23,9 +23,9 @@ class Validate
      * @param array $dataAndValues, column and value to validate
      * @param array $policies, the rules that validation must satisfy
      */
-    public function abide(array $dataAndValues, array $policies)
+    public function abide(array $data_and_values, array $policies)
     {
-        foreach ($dataAndValues as $column => $value){
+        foreach ($data_and_values as $column => $value){
             if(in_array($column, array_keys($policies))){
                 self::doValidation(
                     ['column' => $column, 'value' => $value, 'policies' => $policies[$column]]
@@ -68,7 +68,7 @@ class Validate
         return true;
     }
     
-    public static function required($column, $value, $policy)
+    public static function required($column, $value, $policy=null)
     {
         return $value !== null && !empty(trim($value));
     }
@@ -89,7 +89,7 @@ class Validate
         return true;
     }
     
-    public static function email($column, $value, $policy)
+    public static function email($column, $value)
     {
         if($value != null && !empty(trim($value))){
             return filter_var($value, FILTER_VALIDATE_EMAIL);
@@ -97,7 +97,7 @@ class Validate
         return true;
     }
     
-    public static function mixed($column, $value, $policy)
+    public static function mixed($column, $value, $policy=null)
     {
         if($value != null && !empty(trim($value))){
             if(!preg_match('/^[A-Za-z0-9 .,_~\-!@#\&%\^\'\*\(\)]+$/', $value)){
@@ -107,7 +107,7 @@ class Validate
         return true;
     }
     
-    public static function string($column, $value, $policy)
+    public static function string($column, $value, $policy=null)
     {
         if($value != null && !empty(trim($value))){
             if(!preg_match('/^[A-Za-z ]+$/', $value)){
@@ -117,7 +117,7 @@ class Validate
         return true;
     }
     
-    public static function number($column, $value, $policy)
+    public static function number($column, $value, $policy=null)
     {
         if($value != null && !empty(trim($value))){
             if(!preg_match('/^[0-9.]+$/', $value)){
